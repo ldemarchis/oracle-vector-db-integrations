@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/FREEPDB1
+    username: VECTOR
+    password: vector2
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.1
+      embedding:
+        options:
+          model: nomic-embed-text
+
+    vectorstore:
+      oracle:
+        # keep defaults for PoC, but set a table name to avoid collisions
+        table-name: SPRING_AI_VECTORS
+        # if you know your embedding dimension, you can set it explicitly
+        # dimensions: 768
+        initialize-schema: true
