@@ -3,7 +3,7 @@ into Spring Boot applications. It provides abstractions for chat models, embeddi
 models, and vector stores, while still allowing developers to keep full control
 over prompt construction and data flow.
 
-Oracle Database 23ai introduces native AI Vector Search capabilities. These
+Oracle Database 26ai introduces native AI Vector Search capabilities. These
 capabilities allow developers to store embedding vectors directly inside the
 database and perform similarity search using SQL. This removes the need for an
 external vector database and enables tighter integration with existing relational
