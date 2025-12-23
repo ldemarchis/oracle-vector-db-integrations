@@ -1,4 +1,4 @@
-package java.main.com.example.poc.config;
+package com.example.poc.config;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

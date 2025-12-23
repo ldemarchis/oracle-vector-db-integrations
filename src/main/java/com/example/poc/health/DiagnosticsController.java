@@ -1,4 +1,4 @@
-package main.java.com.example.poc.health;
+package com.example.poc.health;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

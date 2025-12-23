@@ -1,4 +1,4 @@
-package main.java.com.example.poc.rag;
+package com.example.poc.rag;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

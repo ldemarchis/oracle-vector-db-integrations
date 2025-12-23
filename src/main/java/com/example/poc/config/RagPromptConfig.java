@@ -1,4 +1,4 @@
-package main.java.com.example.poc.config;
+package com.example.poc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

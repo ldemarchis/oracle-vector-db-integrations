@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:oracle:thin:@localhost:1521/FREEPDB1
-    username: VECTOR
-    password: vector2
+    username: spring-ai-user
+    password: spring-ai-password
 
   ai:
     ollama:

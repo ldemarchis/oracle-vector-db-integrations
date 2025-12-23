@@ -1,7 +1,7 @@
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/Application.java
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/config/IngestionConfig.java
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/config/RagPromptConfig.java
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/health/DiagnosticsController.java
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/rag/IngestionController.java
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/rag/RagController.java
-/Users/lodemarc/Desktop/Evangelism/SpringAI-Oracle/springai-oracle-ollama-poc/src/main/java/com/example/poc/rag/RagService.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/Application.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/config/IngestionConfig.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/config/RagPromptConfig.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/health/DiagnosticsController.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/rag/IngestionController.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/rag/RagController.java
+/Users/lodemarc/Documents/GitHub/springai-oracle/src/main/java/com/example/poc/rag/RagService.java
