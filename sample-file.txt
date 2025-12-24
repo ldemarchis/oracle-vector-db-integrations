@@ -15,7 +15,7 @@ compared against stored document embeddings to retrieve the most relevant
 documents. The retrieved documents are provided as context to a Large Language
 Model, which generates a grounded answer.
 
-In this proof of concept, Spring AI uses Oracle Database 23ai as the vector store.
+In this proof of concept, Spring AI uses Oracle Database 26ai as the vector store.
 Ollama is used to serve both the embedding model and the chat model locally. The
 vector store is responsible for similarity search, while the language model is
 responsible only for natural language generation.
