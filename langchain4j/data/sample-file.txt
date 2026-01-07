@@ -1,0 +1,25 @@
+Spring AI is a framework that simplifies the integration of Large Language Models
+into Spring Boot applications. It provides abstractions for chat models, embedding
+models, and vector stores, while still allowing developers to keep full control
+over prompt construction and data flow.
+
+Oracle Database 26ai introduces native AI Vector Search capabilities. These
+capabilities allow developers to store embedding vectors directly inside the
+database and perform similarity search using SQL. This removes the need for an
+external vector database and enables tighter integration with existing relational
+data.
+
+In a Retrieval-Augmented Generation (RAG) architecture, user questions are first
+converted into embeddings using an embedding model. These embeddings are then
+compared against stored document embeddings to retrieve the most relevant
+documents. The retrieved documents are provided as context to a Large Language
+Model, which generates a grounded answer.
+
+In this proof of concept, Spring AI uses Oracle Database 26ai as the vector store.
+Ollama is used to serve both the embedding model and the chat model locally. The
+vector store is responsible for similarity search, while the language model is
+responsible only for natural language generation.
+
+This architecture allows developers to build end-to-end AI-powered applications
+without sending data to external cloud services. All data, embeddings, and model
+inference can run locally or inside a controlled enterprise environment.

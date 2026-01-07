@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
+    username: VECTOR
+    password: vector2
+    driver-class-name: oracle.jdbc.OracleDriver
+
+app:
+  ollama:
+    base-url: http://localhost:11434
+    chat-model: llama3.1
+    embedding-model: nomic-embed-text
+
+  oracle:
+    embedding-table: LC4J_EMBEDDINGS
+    create-schema: true
+
+  ingest:
+    dir: ./data
