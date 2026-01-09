@@ -1,11 +1,10 @@
 package com.example.rag.service;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,37 +12,42 @@ import java.util.Map;
 public class FileIngestionService {
 
     private final IngestionService ingestionService;
-    private final Path ingestDir;
 
-    public FileIngestionService(IngestionService ingestionService,
-                                @Value("${app.ingest.dir}") String ingestDir) {
+    public FileIngestionService(IngestionService ingestionService) {
         this.ingestionService = ingestionService;
-        this.ingestDir = Paths.get(ingestDir);
     }
 
-    public int ingestAll() throws IOException {
-        if (!Files.exists(ingestDir) || !Files.isDirectory(ingestDir)) {
-            throw new IllegalArgumentException("Ingest dir does not exist or is not a directory: " + ingestDir);
+    public record IngestPathResult(String docId, int chunks, List<String> ids) {}
+
+    public IngestPathResult ingestPath(String pathStr,
+                                       String docIdOverride,
+                                       Map<String, Object> metadata) throws Exception {
+
+        if (pathStr == null || pathStr.isBlank()) {
+            throw new IllegalArgumentException("path is required");
         }
 
-        int count = 0;
+        Path path = Paths.get(pathStr).normalize().toAbsolutePath();
 
-        try (var paths = Files.walk(ingestDir)) {
-            for (Path p : (Iterable<Path>) paths::iterator) {
-                if (!Files.isRegularFile(p)) continue;
-
-                String name = ingestDir.relativize(p).toString();
-                String text = Files.readString(p, StandardCharsets.UTF_8);
-
-                ingestionService.ingest(
-                        name, // docId = filename/path
-                        text,
-                        Map.of("source", name)
-                );
-
-                count++;
-            }
+        if (!Files.exists(path)) {
+            throw new IllegalArgumentException("File does not exist: " + path);
         }
-        return count;
+        if (!Files.isRegularFile(path)) {
+            throw new IllegalArgumentException("Not a regular file: " + path);
+        }
+
+        String text = Files.readString(path, StandardCharsets.UTF_8);
+
+        String docId = (docIdOverride != null && !docIdOverride.isBlank())
+                ? docIdOverride
+                : path.getFileName().toString();
+
+        Map<String, Object> merged = new HashMap<>();
+        if (metadata != null) merged.putAll(metadata);
+        merged.putIfAbsent("sourcePath", path.toString());
+
+        List<String> ids = ingestionService.ingest(docId, text, merged);
+
+        return new IngestPathResult(docId, ids.size(), ids);
     }
 }

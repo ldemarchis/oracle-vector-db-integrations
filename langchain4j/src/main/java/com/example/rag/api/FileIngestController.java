@@ -3,11 +3,15 @@ package com.example.rag.api;
 import com.example.rag.service.FileIngestionService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class FileIngestController {
 
-    public record FileIngestResponse(int filesIngested) {}
+    public record IngestPathRequest(String path, String docId, Map<String, Object> metadata) {}
+    public record IngestPathResponse(String docId, int chunks, List<String> ids) {}
 
     private final FileIngestionService fileIngestionService;
 
@@ -15,9 +19,9 @@ public class FileIngestController {
         this.fileIngestionService = fileIngestionService;
     }
 
-    @PostMapping("/ingest/files")
-    public FileIngestResponse ingestFiles() throws Exception {
-        int n = fileIngestionService.ingestAll();
-        return new FileIngestResponse(n);
+    @PostMapping("/ingest/path")
+    public IngestPathResponse ingestPath(@RequestBody IngestPathRequest req) throws Exception {
+        var r = fileIngestionService.ingestPath(req.path(), req.docId(), req.metadata());
+        return new IngestPathResponse(r.docId(), r.chunks(), r.ids());
     }
 }

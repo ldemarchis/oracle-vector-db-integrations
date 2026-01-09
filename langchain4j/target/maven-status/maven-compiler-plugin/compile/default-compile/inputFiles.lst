@@ -3,6 +3,7 @@
 /Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/api/FileIngestController.java
 /Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/api/IngestController.java
 /Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/config/LangChainConfig.java
+/Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/service/DirectChatService.java
 /Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/service/FileIngestionService.java
 /Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/service/IngestionService.java
 /Users/lodemarc/Documents/GitHub/SpringAI/langchain4j/src/main/java/com/example/rag/service/RagChatService.java
