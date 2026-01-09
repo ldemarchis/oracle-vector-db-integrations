@@ -50,11 +50,6 @@ public class RagChatService {
                 %s
                 """.formatted(context, question);
 
-/*         var response = chatModel.generate(List.of(
-                SystemMessage.from(system),
-                UserMessage.from(user)
-        ));
-*/
         return chatModel.chat(prompt);
     }
 }
