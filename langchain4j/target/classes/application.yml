@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
-    username: user
-    password: password
+    username: langchain-user
+    password: langchain-password
     driver-class-name: oracle.jdbc.OracleDriver
 
 app:
