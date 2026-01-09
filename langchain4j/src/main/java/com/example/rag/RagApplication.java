@@ -16,8 +16,6 @@ public class RagApplication {
     ApplicationRunner onStart() {
         return args -> {
             System.out.println("RAG API is running.");
-            System.out.println("POST http://localhost:8080/api/ingest");
-            System.out.println("POST http://localhost:8080/api/chat");
         };
     }
 }
